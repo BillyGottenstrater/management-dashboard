@@ -6,6 +6,11 @@
  */
 
 module.exports = {
-	
+	find(req, res) {
+		if (req.query.include) {
+			
+		}
+		console.log(req);
+	}
 };
 

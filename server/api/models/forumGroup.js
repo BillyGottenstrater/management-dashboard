@@ -1,5 +1,5 @@
 /**
- * Forum_thread.js
+ * Forum_groups.js
  *
  * @description :: TODO: You might write a short summary of how this model works and what it represents here.
  * @docs        :: http://sailsjs.org/documentation/concepts/models-and-orm/models
@@ -10,16 +10,18 @@ module.exports = {
     attributes: {
         id: {
             type: 'integer',
-            primaryKey: true
+            autoIncrement: true,
+            primaryKey: true,
+            unique: true
         },
-        subject: 'string',
-        user_id: {
+        name: 'string',
+        category_id: {
             type: 'integer',
-            model: 'user'
+            model: 'forumCategory'
         },
-        status_id: {
+        user_group_id: {
             type: 'integer',
-            model: 'forum_status'
+            model: 'userGroup'
         }
     }
 };

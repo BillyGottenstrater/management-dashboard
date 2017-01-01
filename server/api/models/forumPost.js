@@ -1,26 +1,30 @@
 /**
- * Forum_votes.js
+ * forum-posts.js
  *
  * @description :: TODO: You might write a short summary of how this model works and what it represents here.
  * @docs        :: http://sailsjs.org/documentation/concepts/models-and-orm/models
  */
 
 module.exports = {
-
     attributes: {
         id: {
             type: 'integer',
-            primaryKey: true
+            autoIncrement: true,
+            primaryKey: true,
+            unique: true
         },
-        up_count: 'integer',
-        down_count: 'integer',
-        thread_id: {
+        subject: 'string',
+        content: 'text',
+        user_id: {
             type: 'integer',
-            model: 'forum_thread',
+            model: 'user'
         },
-        post_id: {
+        status_id: {
             type: 'integer',
-            model: 'forum_post'
+            model: 'forumStatus'
+        },
+        thread: {
+            model: 'forumThread'
         }
     }
 };

@@ -1,7 +1,8 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-	model() {
-		return this.get('store').findAll('forum-thread', {include: 'posts'});
-	}
+    ajax: Ember.inject.service(),
+    model() {
+        return this.get('ajax').request('/retailKpis');
+    }
 });

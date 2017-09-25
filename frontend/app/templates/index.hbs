@@ -7,7 +7,7 @@
 </select>
 <label>Sub-type:</label>
 <select onchange={{action "subTypeChange" value="target.value"}}>
-    <option>Choose a SubType</option>
+    <option value=''>Choose a SubType</option>
     {{#each subType as | option | }}
         <option value={{option.value}}>{{option.label}}</option>
     {{/each}}
@@ -19,4 +19,6 @@
         <option value={{option.value}}>{{option.label}}</option>
     {{/each}}
 </select>
-{{opened-vs-resolved model=model activeKey=activeKey}}
+<input type="checkbox" name="percent" value={{percentToggle}} onclick={{action 'togglePercent'}}>%<br/>
+<button {{action 'add_metric'}}>Add</button><button {{action 'clear'}}>Clear</button>
+{{c3-chart data=data axis=axis}}

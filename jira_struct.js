@@ -157,7 +157,7 @@ function executeJql(description, jql, resultSet, object) {
 
     $.ajax(url, {
         beforeSend: function(xhr) {
-            xhr.setRequestHeader("Authorization", "Basic " + btoa("rhollister:Qx3rtwm8"));
+            xhr.setRequestHeader("Authorization", "Basic ");
         },
         success: function(data) {
             set(resultSet, newDescription + '.total', data.total);

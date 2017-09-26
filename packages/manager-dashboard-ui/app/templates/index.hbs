@@ -1,0 +1,24 @@
+<label>Project:</label>
+<select onchange={{action "projectChange" value="target.value"}}>
+    <option>Choose a Project</option>
+    {{#each projects as | option | }}
+        <option value={{option.value}}>{{option.label}}</option>
+    {{/each}}
+</select>
+<label>Sub-type:</label>
+<select onchange={{action "subTypeChange" value="target.value"}}>
+    <option value=''>Choose a SubType</option>
+    {{#each subType as | option | }}
+        <option value={{option.value}}>{{option.label}}</option>
+    {{/each}}
+</select>
+<label>Metric:</label>
+<select onchange={{action "metricChange" value="target.value"}}>
+    <option>Choose a Metric</option>
+    {{#each metrics as | option | }}
+        <option value={{option.value}}>{{option.label}}</option>
+    {{/each}}
+</select>
+<input type="checkbox" name="percent" value={{percentToggle}} onclick={{action 'togglePercent'}}>%<br/>
+<button {{action 'add_metric'}}>Add</button><button {{action 'clear'}}>Clear</button>
+{{c3-chart data=data axis=axis}}

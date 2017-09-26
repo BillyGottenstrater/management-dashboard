@@ -1,0 +1,26 @@
+{
+  "name": "ardent-manager-dashboard-api",
+  "namespace": "com.q2.online.api",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC",
+  "scripts": {
+  },
+  "dependencies": {
+    "ardent-route": "^2.1.0",
+    "ardent-core-module": "^2.2.1",
+    "ardent-request-module": "^2.2.3",
+    "base-class": "^1.1.2",
+    "base-plugin": "^3.0.0",
+    "bluebird": "^2.9.24",
+    "boom": "^2.6.1",
+    "joi": "10.x.x",
+    "lodash": "^4.6.1"
+  },
+  "devDependencies": {},
+  "publishConfig": {
+    "registry": "http://aus-lnx-dev-00:4873"
+  }
+}

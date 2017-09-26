@@ -1,0 +1,88 @@
+{
+  "name": "manager-dashboard-api",
+  "namespace": "com.q2.manager.dashboard.api",
+  "version": "0.0.1",
+  "description": "",
+  "main": "dist/index.js",
+  "author": "",
+  "license": "Q2 eBanking Internal Only",
+  "scripts": {
+    "start": "nodemon --watch dist dist/index.js",
+    "test": "npm run compile && USE_CACHEFAUX=1 NODE_ENV=test node dist/test/runner",
+    "test:all": "npm run compile && USE_CACHEFAUX=1 NODE_ENV=test node dist/test/runner all",
+    "test:ci": "npm run coverage",
+    "test:debug": "npm run compile && USE_CACHEFAUX=1 node-debug _mocha dist/test",
+    "lint": "node ../../node_modules/eslint/bin/eslint.js lib sub_modules",
+    "compile": "rm -rf dist && broccoli build dist",
+    "prepublish": "npm run compile",
+    "coverage": "npm run compile && USE_CACHEFAUX=1 NODE_ENV=test istanbul cover --root dist dist/test/runner.js all",
+    "debug": "node --debug-brk index.js"
+  },
+  "dependencies": {
+    "ardent-core-module": "^2.3.0",
+    "ardent-request-module": "^2.2.0",
+    "babel-polyfill": "^6.23.0",
+    "base-class": "^1.1.2",
+    "base-plugin": "^1.0.3",
+    "bluebird": "^2.9.24",
+    "boom": "^2.6.1",
+    "bunyan": "^1.5.1",
+    "bunyan-elasticsearch": "0.0.4",
+    "clone": "^1.0.2",
+    "core-object": "^1.1.0",
+    "debug": "^2.2.0",
+    "exists-sync": "0.0.3",
+    "fs-extra": "^0.30.0",
+    "hoek": "^2.16.3",
+    "joi": "^10.2.1",
+    "lodash": "^4.0.0",
+    "multiparty": "^4.1.2",
+    "rimraf": "~2.2.6",
+    "rsvp": "^3.0.18",
+  },
+  "devDependencies": {
+    "async": "^0.9.0",
+    "blanket": "^1.1.6",
+    "broccoli": "^0.16.0",
+    "broccoli-babel-transpiler": "^5.0.0",
+    "broccoli-cli": "^1.0.0",
+    "broccoli-funnel": "^0.2.3",
+    "broccoli-merge-trees": "^0.2.1",
+    "broccoli-unwatched-tree": "^0.1.1",
+    "cachefaux": "^2.1.0",
+    "chai": "^2.3.0",
+    "chai-as-promised": "^6.0.0",
+    "glob": "^7.x.x",
+    "hapi": "^8.1.0",
+    "istanbul": "^0.3.13",
+    "mocha": "^2.2.5",
+    "nock": "^9.0.14",
+    "nodemon": "1.2.1",
+    "sinon": "^1.17.1",
+    "stream-to-promise": "^2.1.1"
+  },
+  "config": {
+    "mocha-cov-reporter": {
+      "failOnError": true,
+      "threshold": 70,
+      "useColors": true
+    },
+    "blanket": {
+      "data-cover-flags": {
+        "debug": true
+      },
+      "pattern": [
+        "dist/lib",
+        "dist/sub_modules"
+      ],
+      "data-cover-never": [
+        "node_modules/",
+        "blanket/",
+        "tests/"
+      ]
+    }
+  },
+  "publishConfig": {
+    "registry": "http://sinopia:4873"
+  }
+}

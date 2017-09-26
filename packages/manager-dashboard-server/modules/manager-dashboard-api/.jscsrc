@@ -1,0 +1,74 @@
+{
+    "additionalRules": [ "tools/jscs-rules/*.js" ],
+    "excludeFiles": ["tests/fixtures/*"],
+    /*"noHandlebarsCompile": false, // -> will change to true when we excise remaining em.handlebars.compile PROBLEMS FOR NODE*/
+    /*"usePrecompileTemplateProperly": true, PROBLEMS FOR NODE*/
+    "requireCurlyBraces": [
+        "if",
+        "else",
+        "for",
+        "while",
+        "do",
+        "try",
+        "catch"
+    ],
+    "validateIndentation": 4,
+    "requireOperatorBeforeLineBreak": true,
+    "requireParenthesesAroundIIFE": true,
+    /*"requireMultipleVarDecl": "onevar",*/
+    "requireCommaBeforeLineBreak": true,
+    "requireCamelCaseOrUpperCaseIdentifiers": "ignoreProperties",
+    "maximumLineLength": {
+        "value": 100000,
+        "tabSize": 4,
+        "allowUrlComments": true,
+        "allowRegex": true
+    },
+    "validateQuoteMarks": {
+        "escape": true,
+        "mark": "'"
+    },
+    "disallowMixedSpacesAndTabs": "smart",
+    "disallowMultipleLineStrings": true,
+    "disallowTrailingComma": true,
+    "requireSpaceAfterKeywords": [
+        "if",
+        "else",
+        "for",
+        "while",
+        "do",
+        "switch",
+        "return",
+        "try",
+        "catch"
+    ],
+    /*"requireSpacesInsideObjectBrackets": "all",*/
+    /*"requireSpacesInsideArrayBrackets": "all",*/
+    "requireSpacesInConditionalExpression": true,
+    "requireSpaceAfterBinaryOperators": true,   //--->  Hollister will fix in free time and see next one
+    "requireSpaceBeforeBinaryOperators": true,/*[
+        "=", "+=", "-=", "*=", "/=", "%=", "<<=", ">>=", ">>>=",
+        "&=", "|=", "^=", "+=",
+        "+", "-", "*", "/", "%", "<<", ">>", ">>>", "&",
+        "|", "^", "&&", "||", "===", "==", ">=",
+        "<=", "<", ">", "!=", "!=="
+    ],*/
+    "requireSpacesInNamedFunctionExpression": {
+        "beforeOpeningCurlyBrace": true
+    },
+    "validateLineBreaks": "LF",
+
+    "disallowKeywords": [ "with" ],
+    "disallowKeywordsOnNewLine": [ "else" ],
+    /*"disallowSpacesInFunctionExpression": {*/
+        /*"beforeOpeningCurlyBrace": false*/
+    /*},*/
+    "disallowSpacesInNamedFunctionExpression": {
+        "beforeOpeningRoundBrace": true
+    },
+    "disallowSpaceAfterObjectKeys": true,
+    "disallowSpaceAfterPrefixUnaryOperators": true,
+    "disallowSpaceBeforePostfixUnaryOperators": true,
+    /*"disallowSpaceBeforeBinaryOperators": [ ",", ":" ],*/
+    "esnext": true
+}

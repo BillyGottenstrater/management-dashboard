@@ -1,0 +1,23 @@
+{
+  "connection": {
+    "routes": {
+      "cors": true  
+    }
+  },
+  "auth": {
+    "default": "none",
+    "none": {
+      "module": "./lib/dummy_auth"
+    }
+  },
+  "modules": [{
+    "name": "ardent-manager-dashboard-api",
+    "options": {
+      "default_auth": "none"
+    }
+  }],
+  "documentation": true,
+  "console_log": false,
+  "log_level": "trace",
+  "port": 8001
+}

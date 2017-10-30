@@ -16,12 +16,24 @@ You will need the following things properly installed on your computer.
 ## Installation
 
 * `git clone <repository-url>` this repository
-* `cd hoa`
+* `cd <repo-directory>/packages/manager-dashboard-ui/`
+* `npm install`
+* `bower install`
+
+* `cd <repo-directory>/packages/manager-dashboard-server/`
 * `npm install`
 * `bower install`
 
 ## Running / Development
 
+In one window:
+
+* `cd <repo-directory>/packages/manager-dashboard-server/`
+* `node index.js`
+
+In another window:
+
+* `cd <repo-directory>/packages/manager-dashboard-ui/`
 * `ember serve`
 * Visit your app at [http://localhost:4200](http://localhost:4200).
 
